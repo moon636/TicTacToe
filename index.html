@@ -1,12 +1,77 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
+
     <head>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
         <link rel="stylesheet" href="index.css">
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     </head>
-    <body>
+
+    <body id="e">
         <div class="banner">
-            
+            <div class="title">
+                Tic Tac  Toe
+            </div>
+            <div class="menu">
+                <img class="menu-img" src="images/1024px-Hamburger_icon_white.svg.png">
+            </div>
+        </div>
+        <div class="center-game-box">
+            <div id ="game-box-border-id" class="game-box-border">
+                <div id="game-box-id" class="game-box">
+                    <div class="line-1"></div>
+                    <div class="line-2"></div>
+                    <div class="line-3"></div>
+                    <div class="line-4"></div>
+                    <div class="rows-container">
+                        <div class="row-1">
+                            <div id = "box-1-id" class="box-1">
+                                <img id = "box-img-1-id" class="box-img" src="images/circle.png">
+                            </div>
+                            <div id = "box-2-id" class="box-2">
+                                <img id = "box-img-2-id" class="box-img" src="images/cross.png">
+                            </div>
+                            <div id = "box-3-id" class="box-3">
+                                <img id = "box-img-3-id" class="box-img" src="images/cross.png">
+                            </div>
+                        </div>
+                        <div class="row-2">
+                            <div id = "box-4-id" class="box-1">
+                                <img id = "box-img-4-id" class="box-img" src="images/cross.png">
+                            </div>
+                            <div id = "box-5-id" class="box-2">
+                                <img id = "box-img-5-id" class="box-img" src="images/cross.png">
+                            </div>
+                            <div id = "box-6-id" class="box-3">
+                                <img id = "box-img-6-id" class="box-img" src="images/cross.png">
+                            </div>
+                        </div>
+                        <div class="row-3">
+                            <div id = "box-7-id" class="box-1">
+                                <img id = "box-img-7-id" class="box-img" src="images/cross.png">
+                            </div>
+                            <div id = "box-8-id" class="box-2">
+                                <img id = "box-img-8-id" class="box-img" src="images/cross.png">
+                            </div>
+                            <div id = "box-9-id" class="box-3">
+                                <img id = "box-img-9-id" class="box-img" src="images/cross.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="play-btn-id" class="play-btn">PLAY</button>
         </div>
     </body>
+
+    <script src="index.js"></script>
+
 </html>
