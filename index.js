@@ -15,6 +15,7 @@ const textStuff = document.getElementById("text-stuff-id")
 const winsElement = document.getElementById("wins-id")
 const drawsElement = document.getElementById("draws-id")
 const lossesElement = document.getElementById("losses-id")
+const fastestTimeElement = document.getElementById("fastest-time-id")
 
 const winLine1 = document.getElementById("win-line-1-id")
 const winLine2 = document.getElementById("win-line-2-id")
@@ -66,6 +67,8 @@ let gameWonDebounce = false
 
 let wins = Number(localStorage.getItem("wins"))
 
+let time = null
+
 if (!wins) {
     wins = 0
 }
@@ -82,9 +85,16 @@ if (!losses) {
     losses = 0
 }
 
+let fastestTime = Number(localStorage.getItem("fastestTime"))
+
+if (!fastestTime) {
+    fastestTime = 0
+}
+
 winsElement.textContent = wins
 drawsElement.textContent = draws
 lossesElement.textContent = losses
+fastestTimeElement.textContent = fastestTime
 
 function btnHeightToBox() {
     let height = playButton.offsetHeight;
@@ -173,7 +183,6 @@ function fadeInImg(img,doCompChoose) {
 let imgOutOpacity = 1
 
 function fadeOutImgs() {
-    console.log(imgOutOpacity)
     if (imgOutOpacity <= 0) {
         imgOutOpacity = 1
         debounce = false
@@ -400,7 +409,6 @@ function playBtnClick() {
 }
 
 function checkBoard() {
-    console.log("checking")
 
     let isdraw = true
 
@@ -464,7 +472,6 @@ function checkBoard() {
     //////////////////////////////////////////////////////////////////////////////////
 
     else if (isdraw === true) {
-        console.log("draw")
         return "draw"
     }
 
@@ -475,7 +482,6 @@ function checkBoard() {
 }
 
 function resetBoard() {
-    console.log("reset started")
     ticTacToeTable = 
        [0, 0, 0,
         0, 0, 0,
@@ -499,6 +505,9 @@ playButton.onclick = playBtnClick
 
 function boxClicked(boxNumber) {
     if ((ticTacToeTable[boxNumber] === 0) && (debounce === false) && (gameWonDebounce === false)) {
+        if (moveNumber === 0) {
+            time = Date.now()
+        }
         debounce = true
         clickBoxSound.play()
         clickBoxSound.currentTime=0
@@ -509,6 +518,11 @@ function boxClicked(boxNumber) {
 
         checkBoardResults = checkBoard()
         if (checkBoardResults[0] === "crosses") {
+            timeTaken = (Date.now()-time)
+
+            fastestTimeElement.textContent = timeTaken/1000
+            localStorage.setItem("fastestTime", timeTaken/1000)
+
             gameWonDebounce = true
 
             const winLine = winLineList[checkBoardResults[1]-1]
