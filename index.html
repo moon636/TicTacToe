@@ -15,7 +15,7 @@
 
     </head>
 
-    <body id="e">
+    <body id="e" class="root" id="root-id">
         <div class="banner">
             <div class="title">
                 Tic Tac  Toe
@@ -24,7 +24,7 @@
                 <img class="menu-img" src="images/1024px-Hamburger_icon_white.svg.png">
             </div>
         </div>
-        <div class="center-game-box">
+        <div class="center-game-box" id="center-game-box-id">
             <div id ="game-box-border-id" class="game-box-border">
                 <div id="game-box-id" class="game-box">
                     <div class="line-1"></div>
@@ -33,8 +33,9 @@
                     <div class="line-4"></div>
                     <div class="rows-container">
                         <div class="row-1">
+                            <div id="win-line-1-id" class="win-line-1"></div>
                             <div id = "box-1-id" class="box-1">
-                                <img id = "box-img-1-id" class="box-img" src="images/circle.png">
+                                <img id = "box-img-1-id" class="box-img" src="images/cross.png">
                             </div>
                             <div id = "box-2-id" class="box-2">
                                 <img id = "box-img-2-id" class="box-img" src="images/cross.png">
@@ -44,6 +45,7 @@
                             </div>
                         </div>
                         <div class="row-2">
+                            <div id="win-line-2-id" class="win-line-2"></div>
                             <div id = "box-4-id" class="box-1">
                                 <img id = "box-img-4-id" class="box-img" src="images/cross.png">
                             </div>
@@ -55,6 +57,7 @@
                             </div>
                         </div>
                         <div class="row-3">
+                            <div id="win-line-3-id" class="win-line-3"></div>
                             <div id = "box-7-id" class="box-1">
                                 <img id = "box-img-7-id" class="box-img" src="images/cross.png">
                             </div>
@@ -65,10 +68,26 @@
                                 <img id = "box-img-9-id" class="box-img" src="images/cross.png">
                             </div>
                         </div>
+
+                        <div id="win-line-4-id" class="win-line-4"></div>
+                        <div id="win-line-5-id" class="win-line-5"></div>
+                        <div id="win-line-6-id" class="win-line-6"></div>
+
+                        <div id="win-line-7-id" class="win-line-7"></div>
+                        <div id="win-line-8-id" class="win-line-8"></div>
+
                     </div>
                 </div>
             </div>
             <button id="play-btn-id" class="play-btn">PLAY</button>
+            <div class="text-stuff" id="text-stuff-id">
+                <div class="score" id = "score-id">
+                    SCORE: <span class="wins" id="wins-id">0</span>/<span class="draws" id="draws-id">0</span>/<span class="losses" id="losses-id">0</span> 
+                </div>
+                <div class="fastest-win" id = "fastest-win-id">
+                    Fastest Win: <span class="fastest-time" id="fastest-time-id">0.00</span>s
+                </div>  
+            </div>
         </div>
     </body>
 
