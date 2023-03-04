@@ -520,7 +520,7 @@ function boxClicked(boxNumber) {
         if (checkBoardResults[0] === "crosses") {
             timeTaken = (Date.now()-time)
 
-            if ((timeTaken/1000)< fastestTime) {
+            if (((timeTaken/1000)< fastestTime) || fastestTime === 0) {
                 fastestTime = timeTaken/1000
                 fastestTimeElement.textContent = fastestTime
                 localStorage.setItem("fastestTime", fastestTime)
