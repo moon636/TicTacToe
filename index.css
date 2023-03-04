@@ -1,11 +1,16 @@
 * {
     font-family: Roboto, sans-serif;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
     background-color: rgb(30,30,30);
+    font-family: Roboto, sans-serif;
     margin: 0;
     padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    /* padding-bottom: 20vh; */
+    overflow: hidden;
 }
 
 .banner {
@@ -98,17 +103,72 @@ body {
     height:2%;
 }
 .rows-container {
+    position: relative;
     /* display: none; */
     background-color: rgba(255,0,0,0);
     height: 100%
 }
 .row-1, .row-2, .row-3 {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: rgba(0,255,0,0);
     height: 34%;
 }
+
+.win-line-1, .win-line-2, .win-line-3, .win-line-4, .win-line-5, .win-line-6, .win-line-7, .win-line-8 {
+    z-index: 1;
+    display: none;
+    opacity: 0;
+    background-color: rgba(245,245,245,.7);
+    position: absolute;
+} 
+.win-line-1, .win-line-2, .win-line-3 {
+    height: 13px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.win-line-4, .win-line-5, .win-line-6 {
+    height: 100%;
+    width: 13px;
+    border-radius: 10px;
+    top: 0%;
+}
+
+.win-line-4 {
+    left: 14%;
+}
+
+.win-line-5 {
+    left: 49%;
+}
+
+.win-line-6 {
+    left: 83%;
+}
+
+.win-line-7, .win-line-8 {
+    height: 139.5%;
+    width: 13px;
+    border-radius: 10px;
+    top: 0%;
+
+}
+
+.win-line-7 {
+    top: -19.5%;
+    left: 48%;
+    rotate: -45deg;
+}
+
+.win-line-8 {
+    top: -19.5%;
+    right: 48%;
+    rotate: 45deg;
+}
+
 
 .box-1, .box-2, .box-3 {
     display: flex;
@@ -124,12 +184,14 @@ body {
 }
 
 .box-img {
-    display: none;
+    /* display: none; */
     width: 100%;
+    opacity: 0;
 }
 
 .play-btn {
     /* display: none; */
+    cursor: pointer;
     font-size: 2.25rem;
     font-weight: 500;
     border: 1px solid rgb(240,240,240);
@@ -162,3 +224,29 @@ body {
                 border-color 0.4s ease-out 0s,
                 font-size 0.4s ease-out 0s;
 }
+
+.text-stuff {
+    position: absolute;
+    color: rgb(240,240,240);
+    font-size: 1.5rem;
+    font-weight: 500;
+    bottom: 20%;
+    opacity: 0;
+}
+
+.score {
+    margin-bottom: 3%;
+}
+
+.wins {
+    color: rgb(100,240,100)
+}
+
+.draws {
+    color: rgb(100,100,240)
+}
+
+.losses {
+    color: rgb(240,100,100)
+}
+
