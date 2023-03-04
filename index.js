@@ -520,8 +520,11 @@ function boxClicked(boxNumber) {
         if (checkBoardResults[0] === "crosses") {
             timeTaken = (Date.now()-time)
 
-            fastestTimeElement.textContent = timeTaken/1000
-            localStorage.setItem("fastestTime", timeTaken/1000)
+            if ((timeTaken/1000)< fastestTime) {
+                fastestTime = timeTaken/1000
+                fastestTimeElement.textContent = fastestTime
+                localStorage.setItem("fastestTime", fastestTime)
+            }
 
             gameWonDebounce = true
 
