@@ -64,7 +64,7 @@ let debounce = false
 
 let gameWonDebounce = false
 
-let wins = Number(localStorage.getItem("wins").toString())
+let wins = Number(localStorage.getItem("wins"))
 
 if (!wins) {
     wins = 0
